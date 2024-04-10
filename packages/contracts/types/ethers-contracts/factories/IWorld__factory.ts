@@ -8,1969 +8,1969 @@ import type { IWorld, IWorldInterface } from "../IWorld";
 
 const _abi = [
   {
+    type: "function",
+    name: "addSpecialVoter",
     inputs: [
       {
-        internalType: "string",
-        name: "resource",
-        type: "string",
-      },
-      {
-        internalType: "address",
-        name: "caller",
-        type: "address",
-      },
-    ],
-    name: "AccessDenied",
-    type: "error",
-  },
-  {
-    inputs: [
-      {
-        internalType: "bytes4",
-        name: "functionSelector",
-        type: "bytes4",
-      },
-    ],
-    name: "FunctionSelectorExists",
-    type: "error",
-  },
-  {
-    inputs: [
-      {
-        internalType: "bytes4",
-        name: "functionSelector",
-        type: "bytes4",
-      },
-    ],
-    name: "FunctionSelectorNotFound",
-    type: "error",
-  },
-  {
-    inputs: [
-      {
-        internalType: "string",
-        name: "resource",
-        type: "string",
-      },
-    ],
-    name: "InvalidSelector",
-    type: "error",
-  },
-  {
-    inputs: [
-      {
-        internalType: "string",
-        name: "module",
-        type: "string",
-      },
-    ],
-    name: "ModuleAlreadyInstalled",
-    type: "error",
-  },
-  {
-    inputs: [
-      {
-        internalType: "string",
-        name: "resource",
-        type: "string",
-      },
-    ],
-    name: "ResourceExists",
-    type: "error",
-  },
-  {
-    inputs: [
-      {
-        internalType: "string",
-        name: "resource",
-        type: "string",
-      },
-    ],
-    name: "ResourceNotFound",
-    type: "error",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "length",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "received",
-        type: "uint256",
-      },
-    ],
-    name: "StoreCore_DataIndexOverflow",
-    type: "error",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "expected",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "received",
-        type: "uint256",
-      },
-    ],
-    name: "StoreCore_InvalidDataLength",
-    type: "error",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "expected",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "received",
-        type: "uint256",
-      },
-    ],
-    name: "StoreCore_InvalidFieldNamesLength",
-    type: "error",
-  },
-  {
-    inputs: [],
-    name: "StoreCore_NotDynamicField",
-    type: "error",
-  },
-  {
-    inputs: [],
-    name: "StoreCore_NotImplemented",
-    type: "error",
-  },
-  {
-    inputs: [
-      {
-        internalType: "bytes32",
-        name: "tableId",
-        type: "bytes32",
-      },
-      {
-        internalType: "string",
-        name: "tableIdString",
-        type: "string",
-      },
-    ],
-    name: "StoreCore_TableAlreadyExists",
-    type: "error",
-  },
-  {
-    inputs: [
-      {
-        internalType: "bytes32",
-        name: "tableId",
-        type: "bytes32",
-      },
-      {
-        internalType: "string",
-        name: "tableIdString",
-        type: "string",
-      },
-    ],
-    name: "StoreCore_TableNotFound",
-    type: "error",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "system",
-        type: "address",
-      },
-    ],
-    name: "SystemExists",
-    type: "error",
-  },
-  {
-    anonymous: false,
-    inputs: [],
-    name: "HelloWorld",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        internalType: "bytes32",
-        name: "table",
-        type: "bytes32",
-      },
-      {
-        indexed: false,
-        internalType: "bytes32[]",
-        name: "key",
-        type: "bytes32[]",
-      },
-    ],
-    name: "StoreDeleteRecord",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        internalType: "bytes32",
-        name: "table",
-        type: "bytes32",
-      },
-      {
-        indexed: false,
-        internalType: "bytes32[]",
-        name: "key",
-        type: "bytes32[]",
-      },
-      {
-        indexed: false,
-        internalType: "bytes",
-        name: "data",
-        type: "bytes",
-      },
-    ],
-    name: "StoreEphemeralRecord",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        internalType: "bytes32",
-        name: "table",
-        type: "bytes32",
-      },
-      {
-        indexed: false,
-        internalType: "bytes32[]",
-        name: "key",
-        type: "bytes32[]",
-      },
-      {
-        indexed: false,
-        internalType: "uint8",
-        name: "schemaIndex",
-        type: "uint8",
-      },
-      {
-        indexed: false,
-        internalType: "bytes",
-        name: "data",
-        type: "bytes",
-      },
-    ],
-    name: "StoreSetField",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        internalType: "bytes32",
-        name: "table",
-        type: "bytes32",
-      },
-      {
-        indexed: false,
-        internalType: "bytes32[]",
-        name: "key",
-        type: "bytes32[]",
-      },
-      {
-        indexed: false,
-        internalType: "bytes",
-        name: "data",
-        type: "bytes",
-      },
-    ],
-    name: "StoreSetRecord",
-    type: "event",
-  },
-  {
-    inputs: [
-      {
-        internalType: "bytes32",
         name: "_hackathonId",
         type: "bytes32",
+        internalType: "bytes32",
       },
       {
-        internalType: "address",
         name: "_voter",
         type: "address",
+        internalType: "address",
       },
       {
-        internalType: "uint32",
         name: "voteSum",
         type: "uint32",
+        internalType: "uint32",
       },
     ],
-    name: "addSpecialVoter",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "call",
     inputs: [
       {
-        internalType: "bytes16",
         name: "namespace",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes16",
         name: "name",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes",
         name: "funcSelectorAndArgs",
         type: "bytes",
+        internalType: "bytes",
       },
     ],
-    name: "call",
     outputs: [
       {
-        internalType: "bytes",
         name: "",
         type: "bytes",
+        internalType: "bytes",
       },
     ],
     stateMutability: "payable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "changeAdmin",
     inputs: [
       {
-        internalType: "address",
         name: "_newAdmin",
         type: "address",
+        internalType: "address",
       },
     ],
-    name: "changeAdmin",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "createHackathon",
     inputs: [
       {
-        internalType: "address",
         name: "_prizeToken",
         type: "address",
+        internalType: "address",
       },
       {
-        internalType: "uint256",
         name: "_startTimestamp",
         type: "uint256",
+        internalType: "uint256",
       },
       {
-        internalType: "uint256",
         name: "_submitPeriod",
         type: "uint256",
+        internalType: "uint256",
       },
       {
-        internalType: "uint256",
         name: "_votingPeriod",
         type: "uint256",
+        internalType: "uint256",
       },
       {
-        internalType: "uint256",
         name: "_withdrawalPeriod",
         type: "uint256",
+        internalType: "uint256",
       },
       {
-        internalType: "uint8",
         name: "_winnerCount",
         type: "uint8",
+        internalType: "uint8",
       },
       {
-        components: [
-          {
-            internalType: "string",
-            name: "name",
-            type: "string",
-          },
-          {
-            internalType: "string",
-            name: "uri",
-            type: "string",
-          },
-          {
-            internalType: "string",
-            name: "imageUri",
-            type: "string",
-          },
-          {
-            internalType: "string",
-            name: "description",
-            type: "string",
-          },
-        ],
-        internalType: "struct HackathonInfoData",
         name: "_hackathonInfo",
         type: "tuple",
+        internalType: "struct HackathonInfoData",
+        components: [
+          {
+            name: "name",
+            type: "string",
+            internalType: "string",
+          },
+          {
+            name: "uri",
+            type: "string",
+            internalType: "string",
+          },
+          {
+            name: "imageUri",
+            type: "string",
+            internalType: "string",
+          },
+          {
+            name: "description",
+            type: "string",
+            internalType: "string",
+          },
+        ],
       },
       {
-        internalType: "address",
         name: "_voteNft",
         type: "address",
+        internalType: "address",
       },
     ],
-    name: "createHackathon",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
-    inputs: [
-      {
-        internalType: "bytes32",
-        name: "_hackathonId",
-        type: "bytes32",
-      },
-    ],
+    type: "function",
     name: "deleteHackathon",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
     inputs: [
       {
-        internalType: "bytes32",
         name: "_hackathonId",
         type: "bytes32",
+        internalType: "bytes32",
       },
     ],
-    name: "deleteHackathonByAdmin",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "deleteHackathonByAdmin",
     inputs: [
       {
+        name: "_hackathonId",
+        type: "bytes32",
         internalType: "bytes32",
+      },
+    ],
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    name: "deleteRecord",
+    inputs: [
+      {
         name: "table",
         type: "bytes32",
+        internalType: "bytes32",
       },
       {
-        internalType: "bytes32[]",
         name: "key",
         type: "bytes32[]",
+        internalType: "bytes32[]",
       },
     ],
-    name: "deleteRecord",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "deleteRecord",
     inputs: [
       {
-        internalType: "bytes16",
         name: "namespace",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes16",
         name: "name",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes32[]",
         name: "key",
         type: "bytes32[]",
+        internalType: "bytes32[]",
       },
     ],
-    name: "deleteRecord",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
-    inputs: [
-      {
-        internalType: "bytes32",
-        name: "_hackathonId",
-        type: "bytes32",
-      },
-      {
-        internalType: "uint256",
-        name: "_amount",
-        type: "uint256",
-      },
-    ],
+    type: "function",
     name: "depositPrize",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
     inputs: [
       {
-        internalType: "bytes32",
         name: "_hackathonId",
         type: "bytes32",
+        internalType: "bytes32",
       },
       {
-        internalType: "uint256",
         name: "_amount",
         type: "uint256",
+        internalType: "uint256",
       },
     ],
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
     name: "depositPrizeEth",
+    inputs: [
+      {
+        name: "_hackathonId",
+        type: "bytes32",
+        internalType: "bytes32",
+      },
+      {
+        name: "_amount",
+        type: "uint256",
+        internalType: "uint256",
+      },
+    ],
     outputs: [],
     stateMutability: "payable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "emitEphemeralRecord",
     inputs: [
       {
-        internalType: "bytes16",
         name: "namespace",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes16",
         name: "name",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes32[]",
         name: "key",
         type: "bytes32[]",
+        internalType: "bytes32[]",
       },
       {
-        internalType: "bytes",
         name: "data",
         type: "bytes",
+        internalType: "bytes",
       },
     ],
-    name: "emitEphemeralRecord",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "emitEphemeralRecord",
     inputs: [
       {
-        internalType: "bytes32",
         name: "table",
         type: "bytes32",
+        internalType: "bytes32",
       },
       {
-        internalType: "bytes32[]",
         name: "key",
         type: "bytes32[]",
+        internalType: "bytes32[]",
       },
       {
-        internalType: "bytes",
         name: "data",
         type: "bytes",
+        internalType: "bytes",
       },
     ],
-    name: "emitEphemeralRecord",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
-    inputs: [],
+    type: "function",
     name: "getAdministrator",
+    inputs: [],
     outputs: [
       {
-        internalType: "address",
         name: "",
         type: "address",
+        internalType: "address",
       },
     ],
     stateMutability: "view",
-    type: "function",
   },
   {
+    type: "function",
+    name: "getField",
     inputs: [
       {
-        internalType: "bytes32",
         name: "table",
         type: "bytes32",
+        internalType: "bytes32",
       },
       {
-        internalType: "bytes32[]",
         name: "key",
         type: "bytes32[]",
+        internalType: "bytes32[]",
       },
       {
-        internalType: "uint8",
         name: "schemaIndex",
         type: "uint8",
+        internalType: "uint8",
       },
     ],
-    name: "getField",
     outputs: [
       {
-        internalType: "bytes",
         name: "data",
         type: "bytes",
+        internalType: "bytes",
       },
     ],
     stateMutability: "view",
-    type: "function",
   },
   {
+    type: "function",
+    name: "getFieldLength",
     inputs: [
       {
-        internalType: "bytes32",
         name: "table",
         type: "bytes32",
+        internalType: "bytes32",
       },
       {
-        internalType: "bytes32[]",
         name: "key",
         type: "bytes32[]",
+        internalType: "bytes32[]",
       },
       {
-        internalType: "uint8",
         name: "schemaIndex",
         type: "uint8",
+        internalType: "uint8",
       },
       {
-        internalType: "Schema",
         name: "schema",
         type: "bytes32",
+        internalType: "Schema",
       },
     ],
-    name: "getFieldLength",
     outputs: [
       {
-        internalType: "uint256",
         name: "",
         type: "uint256",
+        internalType: "uint256",
       },
     ],
     stateMutability: "view",
-    type: "function",
   },
   {
+    type: "function",
+    name: "getFieldSlice",
     inputs: [
       {
-        internalType: "bytes32",
         name: "table",
         type: "bytes32",
+        internalType: "bytes32",
       },
       {
-        internalType: "bytes32[]",
         name: "key",
         type: "bytes32[]",
+        internalType: "bytes32[]",
       },
       {
-        internalType: "uint8",
         name: "schemaIndex",
         type: "uint8",
+        internalType: "uint8",
       },
       {
-        internalType: "Schema",
         name: "schema",
         type: "bytes32",
+        internalType: "Schema",
       },
       {
-        internalType: "uint256",
         name: "start",
         type: "uint256",
+        internalType: "uint256",
       },
       {
-        internalType: "uint256",
         name: "end",
         type: "uint256",
+        internalType: "uint256",
       },
     ],
-    name: "getFieldSlice",
     outputs: [
       {
-        internalType: "bytes",
         name: "data",
         type: "bytes",
+        internalType: "bytes",
       },
     ],
     stateMutability: "view",
-    type: "function",
   },
   {
+    type: "function",
+    name: "getHackathon",
     inputs: [
       {
-        internalType: "bytes32",
         name: "_hackathonId",
         type: "bytes32",
+        internalType: "bytes32",
       },
     ],
-    name: "getHackathon",
     outputs: [
       {
+        name: "",
+        type: "tuple",
+        internalType: "struct HackathonData",
         components: [
           {
-            internalType: "address",
             name: "owner",
             type: "address",
+            internalType: "address",
           },
           {
-            internalType: "address",
             name: "prizeToken",
             type: "address",
+            internalType: "address",
           },
           {
-            internalType: "uint8",
             name: "phase",
             type: "uint8",
+            internalType: "uint8",
           },
           {
-            internalType: "uint256",
             name: "startTimestamp",
             type: "uint256",
+            internalType: "uint256",
           },
           {
-            internalType: "uint256",
             name: "submitPeriod",
             type: "uint256",
+            internalType: "uint256",
           },
           {
-            internalType: "uint256",
             name: "votingPeriod",
             type: "uint256",
+            internalType: "uint256",
           },
           {
-            internalType: "uint256",
             name: "withdrawalPeriod",
             type: "uint256",
+            internalType: "uint256",
           },
           {
-            internalType: "uint8",
             name: "winnerCount",
             type: "uint8",
+            internalType: "uint8",
           },
         ],
-        internalType: "struct HackathonData",
-        name: "",
-        type: "tuple",
       },
     ],
     stateMutability: "view",
-    type: "function",
   },
   {
+    type: "function",
+    name: "getHackathonInfo",
     inputs: [
       {
-        internalType: "bytes32",
         name: "_hackathonId",
         type: "bytes32",
+        internalType: "bytes32",
       },
     ],
-    name: "getHackathonInfo",
     outputs: [
       {
+        name: "",
+        type: "tuple",
+        internalType: "struct HackathonInfoData",
         components: [
           {
-            internalType: "string",
             name: "name",
             type: "string",
+            internalType: "string",
           },
           {
-            internalType: "string",
             name: "uri",
             type: "string",
+            internalType: "string",
           },
           {
-            internalType: "string",
             name: "imageUri",
             type: "string",
+            internalType: "string",
           },
           {
-            internalType: "string",
             name: "description",
             type: "string",
+            internalType: "string",
           },
         ],
-        internalType: "struct HackathonInfoData",
-        name: "",
-        type: "tuple",
       },
     ],
     stateMutability: "view",
-    type: "function",
   },
   {
+    type: "function",
+    name: "getHackathonPrize",
     inputs: [
       {
-        internalType: "bytes32",
         name: "_hackathonId",
         type: "bytes32",
+        internalType: "bytes32",
       },
     ],
-    name: "getHackathonPrize",
     outputs: [
       {
+        name: "",
+        type: "tuple",
+        internalType: "struct HackathonPrizeData",
         components: [
           {
-            internalType: "uint256",
             name: "deposit",
             type: "uint256",
+            internalType: "uint256",
           },
           {
-            internalType: "address[]",
             name: "submitters",
             type: "address[]",
+            internalType: "address[]",
           },
         ],
-        internalType: "struct HackathonPrizeData",
-        name: "",
-        type: "tuple",
       },
     ],
     stateMutability: "view",
-    type: "function",
   },
   {
+    type: "function",
+    name: "getHackathonSponsor",
     inputs: [
       {
-        internalType: "bytes32",
         name: "_hackathonId",
         type: "bytes32",
+        internalType: "bytes32",
       },
     ],
-    name: "getHackathonSponsor",
     outputs: [
       {
-        internalType: "uint256[]",
         name: "",
         type: "uint256[]",
+        internalType: "uint256[]",
       },
       {
-        internalType: "address[]",
         name: "",
         type: "address[]",
+        internalType: "address[]",
       },
     ],
     stateMutability: "view",
-    type: "function",
   },
   {
+    type: "function",
+    name: "getHackathonVoteNft",
     inputs: [
       {
-        internalType: "bytes32",
         name: "_hackathonId",
         type: "bytes32",
+        internalType: "bytes32",
       },
     ],
-    name: "getHackathonVoteNft",
     outputs: [
       {
+        name: "",
+        type: "tuple",
+        internalType: "struct HackathonVoteNftData",
         components: [
           {
-            internalType: "address",
             name: "voteNft",
             type: "address",
+            internalType: "address",
           },
           {
-            internalType: "address[]",
             name: "specialVoters",
             type: "address[]",
+            internalType: "address[]",
           },
         ],
-        internalType: "struct HackathonVoteNftData",
-        name: "",
-        type: "tuple",
       },
     ],
     stateMutability: "view",
-    type: "function",
   },
   {
-    inputs: [
-      {
-        internalType: "bytes32",
-        name: "table",
-        type: "bytes32",
-      },
-    ],
+    type: "function",
     name: "getKeySchema",
+    inputs: [
+      {
+        name: "table",
+        type: "bytes32",
+        internalType: "bytes32",
+      },
+    ],
     outputs: [
       {
-        internalType: "Schema",
         name: "schema",
         type: "bytes32",
+        internalType: "Schema",
       },
     ],
     stateMutability: "view",
-    type: "function",
   },
   {
-    inputs: [],
+    type: "function",
     name: "getMaxHackathonId",
+    inputs: [],
     outputs: [
       {
-        internalType: "bytes32",
         name: "",
         type: "bytes32",
+        internalType: "bytes32",
       },
     ],
     stateMutability: "view",
-    type: "function",
   },
   {
+    type: "function",
+    name: "getRecord",
     inputs: [
       {
-        internalType: "bytes32",
         name: "table",
         type: "bytes32",
+        internalType: "bytes32",
       },
       {
-        internalType: "bytes32[]",
         name: "key",
         type: "bytes32[]",
+        internalType: "bytes32[]",
       },
       {
-        internalType: "Schema",
         name: "schema",
         type: "bytes32",
+        internalType: "Schema",
       },
     ],
-    name: "getRecord",
     outputs: [
       {
-        internalType: "bytes",
         name: "data",
         type: "bytes",
+        internalType: "bytes",
       },
     ],
     stateMutability: "view",
-    type: "function",
   },
   {
+    type: "function",
+    name: "getRecord",
     inputs: [
       {
-        internalType: "bytes32",
         name: "table",
         type: "bytes32",
+        internalType: "bytes32",
       },
       {
-        internalType: "bytes32[]",
         name: "key",
         type: "bytes32[]",
+        internalType: "bytes32[]",
       },
     ],
-    name: "getRecord",
     outputs: [
       {
-        internalType: "bytes",
         name: "data",
         type: "bytes",
+        internalType: "bytes",
       },
     ],
     stateMutability: "view",
-    type: "function",
   },
   {
-    inputs: [
-      {
-        internalType: "bytes32",
-        name: "table",
-        type: "bytes32",
-      },
-    ],
+    type: "function",
     name: "getSchema",
+    inputs: [
+      {
+        name: "table",
+        type: "bytes32",
+        internalType: "bytes32",
+      },
+    ],
     outputs: [
       {
-        internalType: "Schema",
         name: "schema",
         type: "bytes32",
+        internalType: "Schema",
       },
     ],
     stateMutability: "view",
-    type: "function",
   },
   {
+    type: "function",
+    name: "getSpecialVote",
     inputs: [
       {
-        internalType: "bytes32",
         name: "_hackathonId",
         type: "bytes32",
+        internalType: "bytes32",
       },
       {
-        internalType: "address",
         name: "_voter",
         type: "address",
+        internalType: "address",
       },
     ],
-    name: "getSpecialVote",
     outputs: [
       {
-        internalType: "uint256",
         name: "",
         type: "uint256",
+        internalType: "uint256",
       },
     ],
     stateMutability: "view",
-    type: "function",
   },
   {
+    type: "function",
+    name: "getSubmission",
     inputs: [
       {
-        internalType: "bytes32",
         name: "_hackathonId",
         type: "bytes32",
+        internalType: "bytes32",
       },
       {
-        internalType: "address",
         name: "_submitter",
         type: "address",
+        internalType: "address",
       },
     ],
-    name: "getSubmission",
     outputs: [
       {
+        name: "",
+        type: "tuple",
+        internalType: "struct SubmissionData",
         components: [
           {
-            internalType: "uint256",
             name: "votes",
             type: "uint256",
+            internalType: "uint256",
           },
           {
-            internalType: "uint256",
             name: "withdrawalPrize",
             type: "uint256",
+            internalType: "uint256",
           },
           {
-            internalType: "string",
             name: "name",
             type: "string",
+            internalType: "string",
           },
           {
-            internalType: "string",
             name: "description",
             type: "string",
+            internalType: "string",
           },
           {
-            internalType: "string",
             name: "uri",
             type: "string",
+            internalType: "string",
           },
           {
-            internalType: "string",
             name: "imageUri",
             type: "string",
+            internalType: "string",
           },
         ],
-        internalType: "struct SubmissionData",
-        name: "",
-        type: "tuple",
       },
     ],
     stateMutability: "view",
-    type: "function",
   },
   {
+    type: "function",
+    name: "grantAccess",
     inputs: [
       {
-        internalType: "bytes16",
         name: "namespace",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes16",
         name: "name",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "address",
         name: "grantee",
         type: "address",
+        internalType: "address",
       },
     ],
-    name: "grantAccess",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
-    inputs: [],
+    type: "function",
     name: "increment",
+    inputs: [],
     outputs: [
       {
-        internalType: "uint32",
         name: "",
         type: "uint32",
+        internalType: "uint32",
       },
     ],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
-    inputs: [
-      {
-        internalType: "contract IModule",
-        name: "module",
-        type: "address",
-      },
-      {
-        internalType: "bytes",
-        name: "args",
-        type: "bytes",
-      },
-    ],
+    type: "function",
     name: "installModule",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
     inputs: [
       {
-        internalType: "contract IModule",
         name: "module",
         type: "address",
+        internalType: "contract IModule",
       },
       {
-        internalType: "bytes",
         name: "args",
         type: "bytes",
+        internalType: "bytes",
       },
     ],
-    name: "installRootModule",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
-    inputs: [],
+    type: "function",
+    name: "installRootModule",
+    inputs: [
+      {
+        name: "module",
+        type: "address",
+        internalType: "contract IModule",
+      },
+      {
+        name: "args",
+        type: "bytes",
+        internalType: "bytes",
+      },
+    ],
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
     name: "isStore",
+    inputs: [],
     outputs: [],
     stateMutability: "view",
-    type: "function",
   },
   {
+    type: "function",
+    name: "popFromField",
     inputs: [
       {
-        internalType: "bytes16",
         name: "namespace",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes16",
         name: "name",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes32[]",
         name: "key",
         type: "bytes32[]",
+        internalType: "bytes32[]",
       },
       {
-        internalType: "uint8",
         name: "schemaIndex",
         type: "uint8",
+        internalType: "uint8",
       },
       {
-        internalType: "uint256",
         name: "byteLengthToPop",
         type: "uint256",
+        internalType: "uint256",
       },
     ],
-    name: "popFromField",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "popFromField",
     inputs: [
       {
-        internalType: "bytes32",
         name: "table",
         type: "bytes32",
+        internalType: "bytes32",
       },
       {
-        internalType: "bytes32[]",
         name: "key",
         type: "bytes32[]",
+        internalType: "bytes32[]",
       },
       {
-        internalType: "uint8",
         name: "schemaIndex",
         type: "uint8",
+        internalType: "uint8",
       },
       {
-        internalType: "uint256",
         name: "byteLengthToPop",
         type: "uint256",
+        internalType: "uint256",
       },
     ],
-    name: "popFromField",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "proceedPhase",
     inputs: [
       {
-        internalType: "bytes32",
         name: "_hackathonId",
         type: "bytes32",
+        internalType: "bytes32",
       },
     ],
-    name: "proceedPhase",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "pushToField",
     inputs: [
       {
-        internalType: "bytes32",
         name: "table",
         type: "bytes32",
+        internalType: "bytes32",
       },
       {
-        internalType: "bytes32[]",
         name: "key",
         type: "bytes32[]",
+        internalType: "bytes32[]",
       },
       {
-        internalType: "uint8",
         name: "schemaIndex",
         type: "uint8",
+        internalType: "uint8",
       },
       {
-        internalType: "bytes",
         name: "dataToPush",
         type: "bytes",
+        internalType: "bytes",
       },
     ],
-    name: "pushToField",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "pushToField",
     inputs: [
       {
-        internalType: "bytes16",
         name: "namespace",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes16",
         name: "name",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes32[]",
         name: "key",
         type: "bytes32[]",
+        internalType: "bytes32[]",
       },
       {
-        internalType: "uint8",
         name: "schemaIndex",
         type: "uint8",
+        internalType: "uint8",
       },
       {
-        internalType: "bytes",
         name: "dataToPush",
         type: "bytes",
+        internalType: "bytes",
       },
     ],
-    name: "pushToField",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "registerFunctionSelector",
     inputs: [
       {
-        internalType: "bytes16",
         name: "namespace",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes16",
         name: "name",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "string",
         name: "systemFunctionName",
         type: "string",
+        internalType: "string",
       },
       {
-        internalType: "string",
         name: "systemFunctionArguments",
         type: "string",
+        internalType: "string",
       },
     ],
-    name: "registerFunctionSelector",
     outputs: [
       {
-        internalType: "bytes4",
         name: "worldFunctionSelector",
         type: "bytes4",
+        internalType: "bytes4",
       },
     ],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "registerHook",
     inputs: [
       {
-        internalType: "bytes16",
         name: "namespace",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes16",
         name: "name",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "address",
         name: "hook",
         type: "address",
+        internalType: "address",
       },
     ],
-    name: "registerHook",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
-    inputs: [
-      {
-        internalType: "bytes16",
-        name: "namespace",
-        type: "bytes16",
-      },
-    ],
+    type: "function",
     name: "registerNamespace",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
     inputs: [
       {
-        internalType: "bytes16",
         name: "namespace",
         type: "bytes16",
+        internalType: "bytes16",
+      },
+    ],
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    name: "registerRootFunctionSelector",
+    inputs: [
+      {
+        name: "namespace",
+        type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes16",
         name: "name",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes4",
         name: "worldFunctionSelector",
         type: "bytes4",
+        internalType: "bytes4",
       },
       {
-        internalType: "bytes4",
         name: "systemFunctionSelector",
         type: "bytes4",
+        internalType: "bytes4",
       },
     ],
-    name: "registerRootFunctionSelector",
     outputs: [
       {
-        internalType: "bytes4",
         name: "",
         type: "bytes4",
+        internalType: "bytes4",
       },
     ],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "registerSchema",
     inputs: [
       {
-        internalType: "bytes32",
         name: "table",
         type: "bytes32",
+        internalType: "bytes32",
       },
       {
-        internalType: "Schema",
         name: "schema",
         type: "bytes32",
+        internalType: "Schema",
       },
       {
-        internalType: "Schema",
         name: "keySchema",
         type: "bytes32",
+        internalType: "Schema",
       },
     ],
-    name: "registerSchema",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "registerStoreHook",
     inputs: [
       {
-        internalType: "bytes32",
         name: "table",
         type: "bytes32",
+        internalType: "bytes32",
       },
       {
-        internalType: "contract IStoreHook",
         name: "hook",
         type: "address",
+        internalType: "contract IStoreHook",
       },
     ],
-    name: "registerStoreHook",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "registerSystem",
     inputs: [
       {
-        internalType: "bytes16",
         name: "namespace",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes16",
         name: "name",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "contract System",
         name: "system",
         type: "address",
+        internalType: "contract System",
       },
       {
-        internalType: "bool",
         name: "publicAccess",
         type: "bool",
+        internalType: "bool",
       },
     ],
-    name: "registerSystem",
     outputs: [
       {
-        internalType: "bytes32",
         name: "resourceSelector",
         type: "bytes32",
+        internalType: "bytes32",
       },
     ],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "registerSystemHook",
     inputs: [
       {
-        internalType: "bytes16",
         name: "namespace",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes16",
         name: "name",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "contract ISystemHook",
         name: "hook",
         type: "address",
+        internalType: "contract ISystemHook",
       },
     ],
-    name: "registerSystemHook",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "registerTable",
     inputs: [
       {
-        internalType: "bytes16",
         name: "namespace",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes16",
         name: "name",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "Schema",
         name: "valueSchema",
         type: "bytes32",
+        internalType: "Schema",
       },
       {
-        internalType: "Schema",
         name: "keySchema",
         type: "bytes32",
+        internalType: "Schema",
       },
     ],
-    name: "registerTable",
     outputs: [
       {
-        internalType: "bytes32",
         name: "resourceSelector",
         type: "bytes32",
+        internalType: "bytes32",
       },
     ],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "registerTableHook",
     inputs: [
       {
-        internalType: "bytes16",
         name: "namespace",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes16",
         name: "name",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "contract IStoreHook",
         name: "hook",
         type: "address",
+        internalType: "contract IStoreHook",
       },
     ],
-    name: "registerTableHook",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "revokeAccess",
     inputs: [
       {
-        internalType: "bytes16",
         name: "namespace",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes16",
         name: "name",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "address",
         name: "grantee",
         type: "address",
+        internalType: "address",
       },
     ],
-    name: "revokeAccess",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "setAdmin",
     inputs: [
       {
-        internalType: "address",
         name: "_newAdmin",
         type: "address",
+        internalType: "address",
       },
     ],
-    name: "setAdmin",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "setField",
     inputs: [
       {
-        internalType: "bytes32",
         name: "table",
         type: "bytes32",
+        internalType: "bytes32",
       },
       {
-        internalType: "bytes32[]",
         name: "key",
         type: "bytes32[]",
+        internalType: "bytes32[]",
       },
       {
-        internalType: "uint8",
         name: "schemaIndex",
         type: "uint8",
+        internalType: "uint8",
       },
       {
-        internalType: "bytes",
         name: "data",
         type: "bytes",
+        internalType: "bytes",
       },
     ],
-    name: "setField",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "setField",
     inputs: [
       {
-        internalType: "bytes16",
         name: "namespace",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes16",
         name: "name",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes32[]",
         name: "key",
         type: "bytes32[]",
+        internalType: "bytes32[]",
       },
       {
-        internalType: "uint8",
         name: "schemaIndex",
         type: "uint8",
+        internalType: "uint8",
       },
       {
-        internalType: "bytes",
         name: "data",
         type: "bytes",
+        internalType: "bytes",
       },
     ],
-    name: "setField",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "setMetadata",
     inputs: [
       {
-        internalType: "bytes16",
         name: "namespace",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes16",
         name: "name",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "string",
         name: "tableName",
         type: "string",
+        internalType: "string",
       },
       {
-        internalType: "string[]",
         name: "fieldNames",
         type: "string[]",
+        internalType: "string[]",
       },
     ],
-    name: "setMetadata",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "setMetadata",
     inputs: [
       {
-        internalType: "bytes32",
         name: "table",
         type: "bytes32",
+        internalType: "bytes32",
       },
       {
-        internalType: "string",
         name: "tableName",
         type: "string",
+        internalType: "string",
       },
       {
-        internalType: "string[]",
         name: "fieldNames",
         type: "string[]",
+        internalType: "string[]",
       },
     ],
-    name: "setMetadata",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "setRecord",
     inputs: [
       {
-        internalType: "bytes16",
         name: "namespace",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes16",
         name: "name",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes32[]",
         name: "key",
         type: "bytes32[]",
+        internalType: "bytes32[]",
       },
       {
-        internalType: "bytes",
         name: "data",
         type: "bytes",
+        internalType: "bytes",
       },
     ],
-    name: "setRecord",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "setRecord",
     inputs: [
       {
-        internalType: "bytes32",
         name: "table",
         type: "bytes32",
+        internalType: "bytes32",
       },
       {
-        internalType: "bytes32[]",
         name: "key",
         type: "bytes32[]",
+        internalType: "bytes32[]",
       },
       {
-        internalType: "bytes",
         name: "data",
         type: "bytes",
+        internalType: "bytes",
       },
     ],
-    name: "setRecord",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "submit",
     inputs: [
       {
-        internalType: "bytes32",
         name: "_hackathonId",
         type: "bytes32",
+        internalType: "bytes32",
       },
       {
-        internalType: "string",
         name: "_name",
         type: "string",
+        internalType: "string",
       },
       {
-        internalType: "string",
         name: "_description",
         type: "string",
+        internalType: "string",
       },
       {
-        internalType: "string",
         name: "_uri",
         type: "string",
+        internalType: "string",
       },
       {
-        internalType: "string",
         name: "_imageUri",
         type: "string",
+        internalType: "string",
       },
     ],
-    name: "submit",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "updateHackathon",
     inputs: [
       {
-        internalType: "bytes32",
         name: "_hackathonId",
         type: "bytes32",
+        internalType: "bytes32",
       },
       {
-        internalType: "address",
         name: "_prizeToken",
         type: "address",
+        internalType: "address",
       },
       {
-        internalType: "uint256",
         name: "_startTimestamp",
         type: "uint256",
+        internalType: "uint256",
       },
       {
-        internalType: "uint256",
         name: "_submitPeriod",
         type: "uint256",
+        internalType: "uint256",
       },
       {
-        internalType: "uint256",
         name: "_votingPeriod",
         type: "uint256",
+        internalType: "uint256",
       },
       {
-        internalType: "uint256",
         name: "_withdrawalPeriod",
         type: "uint256",
+        internalType: "uint256",
       },
       {
-        internalType: "uint8",
         name: "_winnerCount",
         type: "uint8",
+        internalType: "uint8",
       },
       {
-        components: [
-          {
-            internalType: "string",
-            name: "name",
-            type: "string",
-          },
-          {
-            internalType: "string",
-            name: "uri",
-            type: "string",
-          },
-          {
-            internalType: "string",
-            name: "imageUri",
-            type: "string",
-          },
-          {
-            internalType: "string",
-            name: "description",
-            type: "string",
-          },
-        ],
-        internalType: "struct HackathonInfoData",
         name: "_hackathonInfo",
         type: "tuple",
+        internalType: "struct HackathonInfoData",
+        components: [
+          {
+            name: "name",
+            type: "string",
+            internalType: "string",
+          },
+          {
+            name: "uri",
+            type: "string",
+            internalType: "string",
+          },
+          {
+            name: "imageUri",
+            type: "string",
+            internalType: "string",
+          },
+          {
+            name: "description",
+            type: "string",
+            internalType: "string",
+          },
+        ],
       },
       {
-        internalType: "address",
         name: "_voteNft",
         type: "address",
+        internalType: "address",
       },
     ],
-    name: "updateHackathon",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "updateInField",
     inputs: [
       {
-        internalType: "bytes32",
         name: "table",
         type: "bytes32",
+        internalType: "bytes32",
       },
       {
-        internalType: "bytes32[]",
         name: "key",
         type: "bytes32[]",
+        internalType: "bytes32[]",
       },
       {
-        internalType: "uint8",
         name: "schemaIndex",
         type: "uint8",
+        internalType: "uint8",
       },
       {
-        internalType: "uint256",
         name: "startByteIndex",
         type: "uint256",
+        internalType: "uint256",
       },
       {
-        internalType: "bytes",
         name: "dataToSet",
         type: "bytes",
+        internalType: "bytes",
       },
     ],
-    name: "updateInField",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "updateInField",
     inputs: [
       {
-        internalType: "bytes16",
         name: "namespace",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes16",
         name: "name",
         type: "bytes16",
+        internalType: "bytes16",
       },
       {
-        internalType: "bytes32[]",
         name: "key",
         type: "bytes32[]",
+        internalType: "bytes32[]",
       },
       {
-        internalType: "uint8",
         name: "schemaIndex",
         type: "uint8",
+        internalType: "uint8",
       },
       {
-        internalType: "uint256",
         name: "startByteIndex",
         type: "uint256",
+        internalType: "uint256",
       },
       {
-        internalType: "bytes",
         name: "dataToSet",
         type: "bytes",
+        internalType: "bytes",
       },
     ],
-    name: "updateInField",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "vote",
     inputs: [
       {
-        internalType: "bytes32",
         name: "_hackathonId",
         type: "bytes32",
+        internalType: "bytes32",
       },
       {
-        internalType: "address[]",
         name: "submissionAddresses",
         type: "address[]",
+        internalType: "address[]",
       },
     ],
-    name: "vote",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
   },
   {
-    inputs: [
-      {
-        internalType: "bytes32",
-        name: "_hackathonId",
-        type: "bytes32",
-      },
-    ],
+    type: "function",
     name: "withdrawByOwner",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
     inputs: [
       {
-        internalType: "bytes32",
         name: "_hackathonId",
         type: "bytes32",
+        internalType: "bytes32",
       },
     ],
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
     name: "withdrawPrize",
+    inputs: [
+      {
+        name: "_hackathonId",
+        type: "bytes32",
+        internalType: "bytes32",
+      },
+    ],
     outputs: [],
     stateMutability: "payable",
-    type: "function",
+  },
+  {
+    type: "event",
+    name: "HelloWorld",
+    inputs: [],
+    anonymous: false,
+  },
+  {
+    type: "event",
+    name: "StoreDeleteRecord",
+    inputs: [
+      {
+        name: "table",
+        type: "bytes32",
+        indexed: false,
+        internalType: "bytes32",
+      },
+      {
+        name: "key",
+        type: "bytes32[]",
+        indexed: false,
+        internalType: "bytes32[]",
+      },
+    ],
+    anonymous: false,
+  },
+  {
+    type: "event",
+    name: "StoreEphemeralRecord",
+    inputs: [
+      {
+        name: "table",
+        type: "bytes32",
+        indexed: false,
+        internalType: "bytes32",
+      },
+      {
+        name: "key",
+        type: "bytes32[]",
+        indexed: false,
+        internalType: "bytes32[]",
+      },
+      {
+        name: "data",
+        type: "bytes",
+        indexed: false,
+        internalType: "bytes",
+      },
+    ],
+    anonymous: false,
+  },
+  {
+    type: "event",
+    name: "StoreSetField",
+    inputs: [
+      {
+        name: "table",
+        type: "bytes32",
+        indexed: false,
+        internalType: "bytes32",
+      },
+      {
+        name: "key",
+        type: "bytes32[]",
+        indexed: false,
+        internalType: "bytes32[]",
+      },
+      {
+        name: "schemaIndex",
+        type: "uint8",
+        indexed: false,
+        internalType: "uint8",
+      },
+      {
+        name: "data",
+        type: "bytes",
+        indexed: false,
+        internalType: "bytes",
+      },
+    ],
+    anonymous: false,
+  },
+  {
+    type: "event",
+    name: "StoreSetRecord",
+    inputs: [
+      {
+        name: "table",
+        type: "bytes32",
+        indexed: false,
+        internalType: "bytes32",
+      },
+      {
+        name: "key",
+        type: "bytes32[]",
+        indexed: false,
+        internalType: "bytes32[]",
+      },
+      {
+        name: "data",
+        type: "bytes",
+        indexed: false,
+        internalType: "bytes",
+      },
+    ],
+    anonymous: false,
+  },
+  {
+    type: "error",
+    name: "AccessDenied",
+    inputs: [
+      {
+        name: "resource",
+        type: "string",
+        internalType: "string",
+      },
+      {
+        name: "caller",
+        type: "address",
+        internalType: "address",
+      },
+    ],
+  },
+  {
+    type: "error",
+    name: "FunctionSelectorExists",
+    inputs: [
+      {
+        name: "functionSelector",
+        type: "bytes4",
+        internalType: "bytes4",
+      },
+    ],
+  },
+  {
+    type: "error",
+    name: "FunctionSelectorNotFound",
+    inputs: [
+      {
+        name: "functionSelector",
+        type: "bytes4",
+        internalType: "bytes4",
+      },
+    ],
+  },
+  {
+    type: "error",
+    name: "InvalidSelector",
+    inputs: [
+      {
+        name: "resource",
+        type: "string",
+        internalType: "string",
+      },
+    ],
+  },
+  {
+    type: "error",
+    name: "ModuleAlreadyInstalled",
+    inputs: [
+      {
+        name: "module",
+        type: "string",
+        internalType: "string",
+      },
+    ],
+  },
+  {
+    type: "error",
+    name: "ResourceExists",
+    inputs: [
+      {
+        name: "resource",
+        type: "string",
+        internalType: "string",
+      },
+    ],
+  },
+  {
+    type: "error",
+    name: "ResourceNotFound",
+    inputs: [
+      {
+        name: "resource",
+        type: "string",
+        internalType: "string",
+      },
+    ],
+  },
+  {
+    type: "error",
+    name: "StoreCore_DataIndexOverflow",
+    inputs: [
+      {
+        name: "length",
+        type: "uint256",
+        internalType: "uint256",
+      },
+      {
+        name: "received",
+        type: "uint256",
+        internalType: "uint256",
+      },
+    ],
+  },
+  {
+    type: "error",
+    name: "StoreCore_InvalidDataLength",
+    inputs: [
+      {
+        name: "expected",
+        type: "uint256",
+        internalType: "uint256",
+      },
+      {
+        name: "received",
+        type: "uint256",
+        internalType: "uint256",
+      },
+    ],
+  },
+  {
+    type: "error",
+    name: "StoreCore_InvalidFieldNamesLength",
+    inputs: [
+      {
+        name: "expected",
+        type: "uint256",
+        internalType: "uint256",
+      },
+      {
+        name: "received",
+        type: "uint256",
+        internalType: "uint256",
+      },
+    ],
+  },
+  {
+    type: "error",
+    name: "StoreCore_NotDynamicField",
+    inputs: [],
+  },
+  {
+    type: "error",
+    name: "StoreCore_NotImplemented",
+    inputs: [],
+  },
+  {
+    type: "error",
+    name: "StoreCore_TableAlreadyExists",
+    inputs: [
+      {
+        name: "tableId",
+        type: "bytes32",
+        internalType: "bytes32",
+      },
+      {
+        name: "tableIdString",
+        type: "string",
+        internalType: "string",
+      },
+    ],
+  },
+  {
+    type: "error",
+    name: "StoreCore_TableNotFound",
+    inputs: [
+      {
+        name: "tableId",
+        type: "bytes32",
+        internalType: "bytes32",
+      },
+      {
+        name: "tableIdString",
+        type: "string",
+        internalType: "string",
+      },
+    ],
+  },
+  {
+    type: "error",
+    name: "SystemExists",
+    inputs: [
+      {
+        name: "system",
+        type: "address",
+        internalType: "address",
+      },
+    ],
   },
 ] as const;
 

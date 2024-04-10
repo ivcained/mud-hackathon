@@ -27,3 +27,7 @@ eth_rpc_url = "https://follower.testnet-chain.linfra.xyz"
 [profile.opgoerli]
 # eth_rpc_url = "https://endpoints.omniatech.io/v1/op/goerli/public"
 eth_rpc_url = "https://goerli.optimism.io"
+[profile.base]
+eth_rpc_url = "https://mainnet.base.org"
+[profile.baseSepolia]
+eth_rpc_url = "https://sepolia.base.org"
