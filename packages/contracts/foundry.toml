@@ -30,4 +30,6 @@ eth_rpc_url = "https://goerli.optimism.io"
 [profile.base]
 eth_rpc_url = "https://mainnet.base.org"
 [profile.baseSepolia]
-eth_rpc_url = "https://sepolia.base.org"
+eth_rpc_url = "https://rpc.ankr.com/base_sepolia/d7938738b40b84930e712edf6891686496fd39fb16ba0010a41a8f2c3d173326"
+[profile.optimism]
+eth_rpc_url = "https://mainnet.optimism.io"
